@@ -153,7 +153,7 @@ elif args.list:
     )['result']
     no_hostgroup = []
     for host in result:
-        if not 'memberofindirect_hostgroup' in host:
+         if not ('memberof_hostgroup' in host or 'memberofindirect_hostgroup' in host):
             no_hostgroup.append(host['fqdn'][0])
     ### inject hosts with no group membership into inventory
     inventory['no_hostgroup'] = {
